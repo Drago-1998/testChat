@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}- Авторизация{% endblock %}
+
+{% block content %}
+    <div class="card-container d-flex justify-content-center align-items-center">
+        <div class="col-lg-4 col-md-8 col-sm-12">
+            <div class="card card-login-shadow">
+                <div class="card-header py-3">
+                    <h4 class="text-center">Авторизация</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form method="post" class="row m-0 justify-content-center">
+                        {% csrf_token %}
+                        <div class="col-12 input-frame mb-2">
+                            <input class="col-12" type="text" name="username" placeholder="Логин">
+                        </div>
+                        <div class="col-12 input-frame mb-2">
+                            <input class="col-12" type="password" name="password" placeholder="Пароль">
+                        </div>
+                        <button type="submit" class="button-indigo">Войти</button>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    {% for e in form.non_field_errors %}
+                        <p>{{ e }}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}- Chat{% endblock title %}
+
+{% block background_class %}inside-background{% endblock %}
+
+{% block content_header %}
+    {% include 'components/home-header.html' with back_url='/accounts/logout/' %}
+{% endblock %}
+
+{% block content %}
+    <div class="card-container">
+        <div class="col-lg-4 col-md-8 col-sm-12">
+            <div class="card">
+                <div class="card-header py-3">
+                    <h4 class="text-center">Выберите / создайте чат</h4>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row justify-content-center px-3">
+                        {% for room in rooms %}
+                            <a class="room-button mb-2" href="{% url 'chat' room.id %}">
+                                <span class="col">{{ room.name }}</span>
+                                <span class="right-arrow">
+                                <svg width="12" height="12" viewBox="0 0 6 12" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.09749 10.1926L5.28249 6.00008L1.09749 1.80758C0.957801 1.66705 0.879395 1.47697 0.879395 1.27883C0.879395 1.08069 0.957801 0.890599 1.09749 0.750077C1.23801 0.610389 1.4281 0.531982 1.62624 0.531982C1.82438 0.531982 2.01447 0.610389 2.15499 0.750077L6.92499 5.52008C7.0514 5.64785 7.1223 5.82034 7.1223 6.00008C7.1223 6.17982 7.0514 6.3523 6.92499 6.48008L2.15499 11.2501C2.01447 11.3898 1.82438 11.4682 1.62624 11.4682C1.4281 11.4682 1.23801 11.3898 1.09749 11.2501C0.957801 11.1096 0.879395 10.9195 0.879395 10.7213C0.879395 10.5232 0.957801 10.3331 1.09749 10.1926Z"
+                                          fill="#F4F4F4"/>
+                                </svg>
+                            </span>
+                            </a>
+                        {% endfor %}
+                    </div>
+                    <form method="post" class="row justify-content-center px-3">
+                        <div class="col-12 input-frame mb-2">
+                            {% csrf_token %}
+                            <input class="col" type="text" name="room_name" placeholder="Введите название чата">
+                            <button type="submit" class="button-indigo">Создать</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

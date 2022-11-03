@@ -1,0 +1,362 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: OpenSans;
+}
+
+button {
+    cursor: pointer;
+}
+
+body {
+    height: 100vh;
+}
+
+/* Main Elements */
+
+.main-content {
+    margin: -68px 0 0 0 !important;
+    padding: 0 !important;
+    height: 100vh;
+}
+
+.main-header {
+    height: 68px;
+    z-index: 100;
+    position: relative;
+}
+
+.main-background {
+    /* Blur */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    backdrop-filter: blur(25px);
+    /* Note: backdrop-filter has minimal browser support */
+}
+
+.inside-background {
+    background: #F4F4F4;
+}
+
+/* Header styles */
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-center-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 80px;
+    background: #FFFFFF;
+    box-shadow: inset 0px 0px 0px 1px #E5E5EA;
+}
+
+.header-empty-content {
+    height: 100%;
+    width: 100%;
+    padding: 0 80px;
+}
+
+.users-count {
+    color: #666668;
+}
+
+.back-btn {
+    width: 40px;
+    margin: 0 0 0 -60px;
+    border: none;
+    background: none;
+    padding: 0 20px;
+}
+
+/* Chat style */
+
+.chat-container {
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -68px;
+    padding-top: 68px;
+}
+
+.chat-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: inset 0px 0px 0px 1px #E5E5EA;
+}
+
+.chat-list {
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column-reverse;
+    -webkit-flex-direction: column-reverse;
+    overflow-y: scroll;
+}
+
+.notification {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    bottom: 100px;
+    z-index: 200;
+    margin-top: 6px;
+    text-align: center;
+    color: #666668;
+}
+
+.message {
+    padding: 5px 10px;
+    border-radius: 6px;
+    width: fit-content;
+    display: flex;
+    margin-top: 6px;
+}
+
+.message-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-message {
+    background-color: #5D5FEF;
+    color: #FFFFFF;
+    align-self: end;
+}
+
+.message .time {
+    display: flex;
+    align-items: center;
+    align-self: end;
+}
+
+.status {
+    margin-left: 5px;
+}
+
+.user-message.arrow {
+    border-top-right-radius: 0;
+}
+
+.message span {
+    display: flex;
+}
+
+.message.arrow {
+    margin-top: 15px;
+}
+
+.user-message.arrow::after {
+    content: "";
+    position: relative;
+    display: inline-block;
+    float: right;
+    width: 0;
+    padding: 5px 0;
+    margin-right: -5px;
+    margin-top: -5px;
+    border-radius: 2px;
+    border: 10px solid #5D5FEF;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+}
+
+.chat-message {
+    background-color: #F2F2F7;
+    color: #2C2C2E;
+    align-self: start;
+}
+
+.chat-message.arrow .message-body {
+    border-top-right-radius: 0;
+    margin-left: -20px;
+}
+
+.chat-message.arrow::before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    float: right;
+    width: 0;
+    padding: 5px 0;
+    margin-top: -5px;
+    right: 20px;
+    border-radius: 2px;
+    border: 10px solid transparent;
+    border-top-color: #F2F2F7;
+}
+
+.chat-message .user-name {
+    font-weight: bold;
+}
+
+.message-box {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px 15px;
+    background: #FFFFFF;
+    box-shadow: inset 0px 0px 0px 1px #E5E5EA;
+}
+
+.message-box input {
+    outline: none;
+    -webkit-appearance: none;
+    border: none;
+}
+
+.message-box button {
+    background: none;
+    border: none;
+}
+
+/* Card styles */
+
+.card-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background: #FFFFFF;
+    box-shadow: inset 0px 0px 0px 1px #E5E5EA;
+    border-radius: 10px;
+}
+
+.card-login-shadow {
+    box-shadow: 0px 40px 30px 10px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 1px #E5E5EA;
+}
+
+.card-header {
+    box-shadow: inset 0px -1px 0px #E5E5EA;
+}
+
+.card-header h4 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    color: #2C2C2E;
+}
+
+/* Input Frame */
+
+.input-frame {
+    height: 48px;
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-frame > input,
+.input-frame > textarea {
+    outline: none;
+    -webkit-appearance: none;
+    border: none;
+}
+
+/* Buttons */
+
+.button-indigo {
+    background-color: #5D5FEF;
+    padding: 10px 30px;
+    border-radius: 5px;
+    width: auto;
+    border: 0;
+    color: #F4F4F4;
+}
+
+.input-frame > .button-indigo {
+    margin: 0 -10px;
+}
+
+.room-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #7879F1;
+    border-radius: 5px;
+    padding: 0 15px;
+    height: 48px;
+    color: #F4F4F4;
+    text-decoration: none;
+}
+
+.room-button > .right-arrow {
+    width: 22px;
+    height: 22px;
+    border: solid 2px white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 0;
+}
+
+/* Scrollbars */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Animations */
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+/* Fonts */
+@font-face {
+    font-family: OpenSans;
+    src: url(../fonts/OpenSans.ttf);
+    font-weight: 400;
+}
